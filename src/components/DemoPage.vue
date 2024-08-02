@@ -1,11 +1,11 @@
 <template>
   <div class="q-pa-md row items-start q-gutter-md">
     <q-card class="my-card" v-for="(item, i) in results" :key="i">
-      <img :src="item.flags.png" />
+      <img :src="item.flags.png" height="150px" />
       <q-card-section>
         <div class="text-h6">Country Name: {{ item?.name?.common }}</div>
         <div class="text-subtitle2">Population: {{ item.population }}</div>
-        <div class="text-subtitle2">
+        <div class="text-subtitle2" text-no-wrap>
           Languages:
           <span v-for="lang of item.languages" :key="lang">
             {{ `${lang} ` }}
@@ -51,4 +51,5 @@ onBeforeMount(() => {
 .my-card
   width: 100%
   max-width: 250px
+  height: 300px
 </style>
